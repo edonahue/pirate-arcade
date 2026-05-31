@@ -16,13 +16,13 @@ GAMES = [
         'id': 'breakout',
         'title': 'TREASURE COVE',
         'desc': 'Smash through fort defenses to reach the loot!',
-        'accent': (255, 140, 50),
+        'accent': c.PIRATE_ORANGE,
     },
     {
         'id': 'asteroids',
         'title': "KRAKEN'S WAKE",
         'desc': 'Navigate treacherous waters and blast sea monsters!',
-        'accent': (210, 150, 60),
+        'accent': c.PIRATE_TAN_DARK,
     },
     {
         'id': 'pirate_dominion',
@@ -34,7 +34,7 @@ GAMES = [
         'id': 'highscores',
         'title': 'HIGH SCORES',
         'desc': 'View best records',
-        'accent': c.GOLD,
+        'accent': c.PIRATE_GOLD,
     },
     {
         'id': 'quit',

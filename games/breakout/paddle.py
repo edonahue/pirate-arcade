@@ -40,4 +40,4 @@ class Paddle:
         pg.draw.rect(surface, c.PIRATE_BROWN, self.rect, border_radius=4)
         inner = self.rect.inflate(-8, -8)
         if inner.width > 0 and inner.height > 0:
-            pg.draw.rect(surface, (120, 85, 50), inner, border_radius=3)
+            pg.draw.rect(surface, c.PIRATE_BROWN_DARK, inner, border_radius=3)

@@ -78,8 +78,8 @@ class Ship:
             r_val = rng.randint(0, 4)
             outer = [(12, 0), (r_val, flame_len), (12, flame_len - 6), (24 - r_val, flame_len)]
             inner = [(12, 4), (r_val + 4, flame_len - 2), (12, flame_len - 8), (24 - r_val - 4, flame_len - 2)]
-            pg.draw.polygon(surf, (255, 120, 30), outer)
-            pg.draw.polygon(surf, (255, 220, 50), inner)
+            pg.draw.polygon(surf, c.PIRATE_FLAME, outer)
+            pg.draw.polygon(surf, c.PIRATE_FLAME_INNER, inner)
             self._flame_frames.append(surf)
 
     def reset(self):

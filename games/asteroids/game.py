@@ -39,7 +39,7 @@ class AsteroidsGame:
         self.inst_font = pg.font.Font(c.FONT_NAME, c.FONT_SIZE_INSTRUCTIONS)
         self.score_font = pg.font.Font(c.FONT_NAME, c.FONT_SIZE_SCORE)
 
-        self._menu_title = self.title_font.render("KRAKEN'S WAKE", True, (255, 200, 80))
+        self._menu_title = self.title_font.render("KRAKEN'S WAKE", True, c.PIRATE_MENU_TITLE)
         self._hs_label = None
         self._hs_surf = None
         lines = [
@@ -81,7 +81,7 @@ class AsteroidsGame:
 
         self._game_over_prompt = self.inst_font.render(
             "Press SPACE to play again  |  ESC to menu", True, c.GRAY)
-        self._g_over_text = self.title_font.render("DAVY JONES' LOCKER", True, (255, 100, 100))
+        self._g_over_text = self.title_font.render("DAVY JONES' LOCKER", True, c.PIRATE_GAME_OVER)
         self._g_over_score = (-1, None)
 
     def run(self):
