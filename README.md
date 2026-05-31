@@ -12,7 +12,7 @@ A pirate-themed collection of four classic arcade games built with Python and Py
 | **Cannonball Clash** | Pong | A pirate ship cannonball duel. First ship to 11 hits wins! |
 | **Treasure Cove** | Breakout | Smash through fort defenses to secure the loot. |
 | **Kraken's Wake** | Asteroids | Sail the Kraken's Wake and sink enemy ships to advance waves. |
-| **Port Royale Tycoon** | Monopoly | Build a shipping empire. Buy properties, collect port fees, and outmaneuver rival captains. |
+| **Port Royale Tycoon** | Property-trading board game | Build a shipping empire. Buy properties, collect port fees, and outmaneuver rival captains. |
 
 ## Features
 
@@ -76,11 +76,12 @@ The app bundle will be in `dist/pirate-arcade/`.
 
 | Key | Action |
 |-----|--------|
-| W / S / Up / Down | Navigate launcher menu |
-| Space / Enter | Select game / Fire |
+| W / S / Up / Down | Navigate menus |
+| Space / Enter | Select / Fire |
 | Escape | Back / Pause / Quit |
 | F11 | Toggle fullscreen |
 | F | Toggle FPS counter |
+| Mouse click | Pause (in-game) |
 
 Refer to in-game help for game-specific controls.
 
@@ -122,7 +123,7 @@ pytest --cov=. --cov-report=term
 
 ## Screenshots
 
-*Screenshots coming soon.*
+*Run `python main.py` to see the full arcade launcher with CRT scanlines, neon effects, and game selection cards.*
 
 ## License
 
