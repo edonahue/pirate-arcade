@@ -80,7 +80,7 @@ The app bundle will be in `dist/pirate-arcade/`.
 | Space / Enter | Select game / Fire |
 | Escape | Back / Pause / Quit |
 | F11 | Toggle fullscreen |
-| F1 | Toggle FPS counter |
+| F | Toggle FPS counter |
 
 Refer to in-game help for game-specific controls.
 

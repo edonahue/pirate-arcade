@@ -52,6 +52,11 @@ class Treasure:
         self.life -= dt
 
     @property
+    def rect(self):
+        r = self.radius
+        return pg.Rect(self.x - r, self.y - r, r * 2, r * 2)
+
+    @property
     def dead(self):
         return self.life <= 0
 
