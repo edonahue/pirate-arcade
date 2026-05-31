@@ -42,5 +42,13 @@ Thumbs.db
 run.sh
 test_scaled.sh
 
+# PyInstaller build output
+dist/pirate-arcade/
+*.exe
+
 # AVX2 pygame wheel bundled by build_deb.sh
 python3-pygame_*.deb
+
+# Build artifacts
+*.dmg
+*.icns

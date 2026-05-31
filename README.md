@@ -1,5 +1,8 @@
 # Pirate Arcade
 
+[![CI](https://github.com/yourusername/pirate-arcade/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/pirate-arcade/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A pirate-themed collection of four classic arcade games built with Python and Pygame. Features a custom arcade-style launcher with CRT scanlines, neon marquee, and cabinet bezel aesthetic.
 
 ## Games
@@ -13,13 +16,14 @@ A pirate-themed collection of four classic arcade games built with Python and Py
 
 ## Features
 
-- Unifi ed pirate aesthetic (colors, sounds, nautical ship names)
+- Unified pirate aesthetic (colors, sounds, nautical ship names)
 - Arcade-style launcher with CRT scanlines, neon marquee, and cabinet bezel
 - Save/load support for Port Royale Tycoon
 - High-score tracking across all games
 - Configurable difficulty, fullscreen mode, and FPS counter
 - Smooth 60 FPS rendering with glow effects, particles, and screen shake
 - Pure-Pygame rendering — no external assets required
+- Cross-platform (Linux, Windows, macOS)
 
 ## Installation
 
@@ -40,6 +44,28 @@ Download the latest `.deb` from the [Releases](https://github.com/yourusername/p
 sudo apt install ./pirate-arcade_*.deb
 ```
 
+### Windows
+
+Download the latest `pirate-arcade.exe` from the [Releases](https://github.com/yourusername/pirate-arcade/releases) page or build from source:
+
+```bash
+pip install -r requirements.txt
+pip install pyinstaller
+pyinstaller pirate-arcade.spec
+```
+
+The executable will be in `dist/pirate-arcade/`.
+
+### macOS
+
+```bash
+pip install -r requirements.txt
+pip install pyinstaller
+pyinstaller pirate-arcade.spec
+```
+
+The app bundle will be in `dist/pirate-arcade/`.
+
 ## Requirements
 
 - Python 3.10+
@@ -58,7 +84,9 @@ sudo apt install ./pirate-arcade_*.deb
 
 Refer to in-game help for game-specific controls.
 
-## Building the Debian package
+## Building packages
+
+### Debian package (Linux)
 
 ```bash
 ./build_deb.sh
@@ -66,10 +94,30 @@ Refer to in-game help for game-specific controls.
 
 Produces `dist/pirate-arcade_<version>_all.deb`.
 
+### Windows / macOS standalone binary
+
+```bash
+pip install pyinstaller
+pyinstaller pirate-arcade.spec
+```
+
+The spec file auto-detects your platform and produces a standalone executable.
+
+## Continuous Integration
+
+This project uses GitHub Actions to run tests on Ubuntu, macOS, and Windows on every push and pull request. See [`.github/workflows/ci.yml`](.github/workflows/ci.yml) for details.
+
 ## Testing
 
 ```bash
-pytest tests/test_pirate_dominion.py -v
+pytest -v
+```
+
+Run with coverage:
+
+```bash
+pip install pytest-cov
+pytest --cov=. --cov-report=term
 ```
 
 ## Screenshots
