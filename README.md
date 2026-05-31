@@ -1,6 +1,6 @@
 # Pirate Arcade
 
-[![CI](https://github.com/yourusername/pirate-arcade/actions/workflows/ci.yml/badge.svg)](https://github.com/yourusername/pirate-arcade/actions/workflows/ci.yml)
+[![CI](https://github.com/edonahue/pirate-arcade/actions/workflows/ci.yml/badge.svg)](https://github.com/edonahue/pirate-arcade/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A pirate-themed collection of four classic arcade games built with Python and Pygame. Features a custom arcade-style launcher with CRT scanlines, neon marquee, and cabinet bezel aesthetic.
@@ -30,7 +30,7 @@ A pirate-themed collection of four classic arcade games built with Python and Py
 ### From source (any platform)
 
 ```bash
-git clone https://github.com/yourusername/pirate-arcade.git
+git clone https://github.com/edonahue/pirate-arcade.git
 cd pirate-arcade
 pip install -r requirements.txt
 python main.py
@@ -38,7 +38,7 @@ python main.py
 
 ### Debian package (Linux)
 
-Download the latest `.deb` from the [Releases](https://github.com/yourusername/pirate-arcade/releases) page and install:
+Download the latest `.deb` from the [Releases](https://github.com/edonahue/pirate-arcade/releases) page and install:
 
 ```bash
 sudo apt install ./pirate-arcade_*.deb
@@ -46,7 +46,7 @@ sudo apt install ./pirate-arcade_*.deb
 
 ### Windows
 
-Download the latest `pirate-arcade.exe` from the [Releases](https://github.com/yourusername/pirate-arcade/releases) page or build from source:
+Download the latest `pirate-arcade.exe` from the [Releases](https://github.com/edonahue/pirate-arcade/releases) page or build from source:
 
 ```bash
 pip install -r requirements.txt

@@ -64,7 +64,7 @@ Section: games
 Priority: optional
 Architecture: all
 Depends: python3 (>= 3.10), python3-pygame (>= 2.5.0), python3-numpy
-Maintainer: Pirate Arcade Team <pirate-arcade@example.com>
+Maintainer: Erich Donahue <edonahue@users.noreply.github.com>
 Description: Pirate Arcade — a pirate-themed arcade game collection
  A collection of pirate-themed arcade games including Cannonball Clash
  (paddle ball), Treasure Cove (brick breaker), Kraken's Wake (space shooter),
@@ -72,7 +72,7 @@ Description: Pirate Arcade — a pirate-themed arcade game collection
  hardware with glow effects, particles, and smooth rendering at high
  refresh rates.
 Installed-Size: ${SIZE}
-Homepage: https://github.com/yourusername/pirate-arcade
+Homepage: https://github.com/edonahue/pirate-arcade
 EOF
 
 cat > "${BUILD_DIR}/DEBIAN/postinst" << 'EOF'
