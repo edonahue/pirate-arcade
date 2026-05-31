@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Pirate Arcade
+Comment=A pirate-themed arcade game collection: Cannonball Clash, Treasure Cove, Kraken's Wake, and Port Royale Tycoon
+Exec=/usr/bin/pirate-arcade
+Type=Application
+Categories=Game;ArcadeGame;
+Keywords=Arcade;Game;Pirate;Pong;Breakout;Asteroids;Monopoly;
+Icon=pirate-arcade
+Terminal=false

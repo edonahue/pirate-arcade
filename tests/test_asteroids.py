@@ -1,3 +1,4 @@
+# ruff: noqa: E402
 import os
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 
@@ -16,9 +17,6 @@ from games.asteroids.barrel import Barrel
 from games.asteroids.cannonball import Cannonball
 from games.asteroids.treasure import Treasure
 import constants as c
-import math
-
-
 class MockAudio:
     def play(self, name):
         pass
@@ -345,7 +343,7 @@ def test_gameplay_treasure_spawn_on_barrel_break(game):
 
 def test_gameplay_wave_progression(game):
     game.barrels = []
-    result = game.update(0.016, _keys())
+    game.update(0.016, _keys())
     assert game.wave == 1
     assert len(game.barrels) == c.ASTEROID_INITIAL_COUNT + 1
 

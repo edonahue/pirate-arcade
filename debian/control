@@ -1,0 +1,20 @@
+Source: pirate-arcade
+Section: games
+Priority: optional
+Maintainer: Erich Donahue <edonahue@users.noreply.github.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+Homepage: https://github.com/edonahue/pirate-arcade
+Rules-Requires-Root: no
+
+Package: pirate-arcade
+Architecture: all
+Depends: python3 (>= 3.10),
+         python3-pygame (>= 2.5.0),
+         python3-numpy,
+         ${misc:Depends}
+Description: Pirate Arcade — a pirate-themed arcade game collection
+ A collection of pirate-themed arcade games including Cannonball Clash
+ (paddle ball), Treasure Cove (brick breaker), Kraken's Wake (space
+ shooter), and Port Royale Tycoon (Monopoly-style strategy), optimized
+ for modern hardware with glow effects, particles, and smooth rendering.

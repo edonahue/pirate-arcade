@@ -74,10 +74,10 @@ class Ship:
             w, h = 24, 28
             surf = pg.Surface((w, h), pg.SRCALPHA)
             rng.seed(seed)
-            l = rng.randint(22, 28)
+            flame_len = rng.randint(22, 28)
             r_val = rng.randint(0, 4)
-            outer = [(12, 0), (r_val, l), (12, l - 6), (24 - r_val, l)]
-            inner = [(12, 4), (r_val + 4, l - 2), (12, l - 8), (24 - r_val - 4, l - 2)]
+            outer = [(12, 0), (r_val, flame_len), (12, flame_len - 6), (24 - r_val, flame_len)]
+            inner = [(12, 4), (r_val + 4, flame_len - 2), (12, flame_len - 8), (24 - r_val - 4, flame_len - 2)]
             pg.draw.polygon(surf, (255, 120, 30), outer)
             pg.draw.polygon(surf, (255, 220, 50), inner)
             self._flame_frames.append(surf)

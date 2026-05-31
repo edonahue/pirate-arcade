@@ -1,4 +1,3 @@
-import pygame as pg
 import constants as c
 
 class Player:

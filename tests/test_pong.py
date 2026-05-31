@@ -1,3 +1,4 @@
+# ruff: noqa: E402
 import os
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 
@@ -233,7 +234,7 @@ def test_gameplay_paddle_collision_changes_ball_direction(game):
     game.ball.y = c.WINDOW_HEIGHT // 2
     game.ball.vx = -c.BALL_SPEED_INITIAL
     game.ball.vy = 0
-    result = game.update(0.016, _keys())
+    game.update(0.016, _keys())
     # Ball should bounce right
     assert game.ball.vx > 0
 

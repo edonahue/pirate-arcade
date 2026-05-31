@@ -247,7 +247,6 @@ def _cache_static_text():
     f13 = _get_font(13)
     f12 = _get_font(12)
     f11 = _get_font(11)
-    f10 = _get_font(10)
 
     _TEXT_CACHE['sea_label'] = f36.render("CARIBBEAN SEA", True, c.GOLD)
     _TEXT_CACHE['sea_label_shadow'] = f36.render("CARIBBEAN SEA", True, (20, 20, 40))

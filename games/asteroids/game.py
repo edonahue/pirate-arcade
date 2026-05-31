@@ -54,7 +54,7 @@ class AsteroidsGame:
             "Sink all enemy ships to advance waves!",
             "Collect floating treasure for bonus loot!",
         ]
-        self._menu_lines = [self.inst_font.render(l, True, c.GRAY) for l in lines]
+        self._menu_lines = [self.inst_font.render(line, True, c.GRAY) for line in lines]
         self._menu_prompt = self.hud_font.render("Press SPACE to cast off!", True, c.PAUSE_HIGHLIGHT)
         self._menu_hint = self.inst_font.render("ESC to return to menu", True, c.GRAY)
 

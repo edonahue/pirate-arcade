@@ -1,3 +1,4 @@
+# ruff: noqa: E402
 import os
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 
@@ -14,7 +15,6 @@ from games.pirate_dominion.player import Player
 from games.pirate_dominion.gameplay import (
     Gameplay, PHASE_ROLL, PHASE_BUY, PHASE_UPGRADE, PHASE_CARD,
     PHASE_PAY_TAX, PHASE_PAY_RENT, PHASE_END_TURN, PHASE_GAME_OVER,
-    PHASE_ANNOUNCE,
 )
 import constants as c
 

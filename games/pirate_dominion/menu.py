@@ -23,7 +23,7 @@ def _ensure_menu():
         "Claim Caribbean islands and charge rival merchants tribute!",
         "Last merchant with doubloons wins.",
     ]
-    _MENU_CACHE['info_lines'] = [inst.render(l, True, c.GRAY) for l in lines]
+    _MENU_CACHE['info_lines'] = [inst.render(line, True, c.GRAY) for line in lines]
     _MENU_CACHE['hint'] = inst.render(
         "W/S navigate  \u2022  Left/Right adjust  \u2022  SPACE / Enter confirm", True, c.GRAY)
 

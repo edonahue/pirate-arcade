@@ -1,3 +1,4 @@
+# ruff: noqa: E402
 import os
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 
@@ -8,9 +9,6 @@ pg.display.set_mode((1, 1), flags=pg.HIDDEN)
 
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-
-import pytest
-
 
 class KeyState:
     """Mimics pygame.key.ScancodeWrapper for test key arrays."""
@@ -43,8 +41,6 @@ def test_launcher_imports():
 def test_pong_game_init():
     """Pong game initializes without error."""
     from games.pong.game import PongGame
-    from games.pong.menu import Menu
-    from games.pong.gameplay import Gameplay
     surface = pg.Surface((1600, 900))
     audio = MockAudio()
     game = PongGame(surface, audio)
@@ -55,7 +51,6 @@ def test_pong_game_init():
 def test_breakout_game_init():
     """Breakout game initializes without error."""
     from games.breakout.game import BreakoutGame
-    from games.breakout.gameplay import Gameplay
     surface = pg.Surface((1600, 900))
     audio = MockAudio()
     game = BreakoutGame(surface, audio)
@@ -65,7 +60,6 @@ def test_breakout_game_init():
 def test_asteroids_game_init():
     """Asteroids game initializes without error."""
     from games.asteroids.game import AsteroidsGame
-    from games.asteroids.gameplay import Gameplay
     surface = pg.Surface((1600, 900))
     audio = MockAudio()
     game = AsteroidsGame(surface, audio)
@@ -75,7 +69,6 @@ def test_asteroids_game_init():
 def test_pirate_dominion_game_init():
     """Pirate Dominion game initializes without error."""
     from games.pirate_dominion.game import PirateDominion
-    from games.pirate_dominion.menu import Menu
     surface = pg.Surface((1600, 900))
     audio = MockAudio()
     game = PirateDominion(surface, audio)

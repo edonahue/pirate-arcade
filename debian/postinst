@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ -x /usr/bin/update-desktop-database ]; then
+    update-desktop-database
+fi
+
+if [ -x /usr/sbin/update-icon-caches ]; then
+    update-icon-caches /usr/share/icons/hicolor
+fi
+
+exit 0

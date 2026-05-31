@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_auto_build:
+
+override_dh_auto_test:
+
+override_dh_auto_install:
+	# Install game source into /usr/share/pirate-arcade/
+	install -d $(CURDIR)/debian/pirate-arcade/usr/share/pirate-arcade/
+	cp -r games $(CURDIR)/debian/pirate-arcade/usr/share/pirate-arcade/
+	cp main.py launcher.py highscores.py constants.py renderer.py audio.py util.py requirements.txt \
+		$(CURDIR)/debian/pirate-arcade/usr/share/pirate-arcade/
+	find $(CURDIR)/debian/pirate-arcade -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+
+	# Install launcher script
+	install -d $(CURDIR)/debian/pirate-arcade/usr/bin/
+	install -m 755 debian/pirate-arcade.launcher $(CURDIR)/debian/pirate-arcade/usr/bin/pirate-arcade
+
+	# Install desktop file
+	install -d $(CURDIR)/debian/pirate-arcade/usr/share/applications/
+	install -m 644 debian/pirate-arcade.desktop $(CURDIR)/debian/pirate-arcade/usr/share/applications/
+
+	# Install icons
+	install -d $(CURDIR)/debian/pirate-arcade/usr/share/icons/hicolor/scalable/apps/
+	install -m 644 icon.svg $(CURDIR)/debian/pirate-arcade/usr/share/icons/hicolor/scalable/apps/pirate-arcade.svg
+	if command -v convert >/dev/null 2>&1; then \
+		install -d $(CURDIR)/debian/pirate-arcade/usr/share/icons/hicolor/256x256/apps/; \
+		convert icon.svg -resize 256x256 $(CURDIR)/debian/pirate-arcade/usr/share/icons/hicolor/256x256/apps/pirate-arcade.png; \
+	fi

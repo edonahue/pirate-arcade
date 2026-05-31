@@ -1,7 +1,7 @@
 import pygame as pg
 import constants as c
 import random
-from games.pirate_dominion.board import spawn_particles, trigger_purchase_flash, trigger_shake, trigger_token_bounce, get_space_center
+from games.pirate_dominion.board import spawn_particles, trigger_purchase_flash, trigger_shake, get_space_center
 
 PHASE_ROLL = 0
 PHASE_RESOLVE = 1
@@ -291,7 +291,7 @@ class Gameplay:
         self._set_message(f"{name} upgraded to level {self.property_levels[prop_idx]}!")
 
     def _pay_rent_to(self, owner, prop_idx):
-        player = self.current_player
+        _player = self.current_player
         if self.mortgaged[prop_idx]:
             self._set_message(f"{c.PD_PROPERTIES[prop_idx][0]} is mortgaged — no tribute due.")
             self.phase = PHASE_ROLL if self.doubles_count > 0 else PHASE_END_TURN

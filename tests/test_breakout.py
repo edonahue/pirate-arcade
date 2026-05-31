@@ -1,3 +1,4 @@
+# ruff: noqa: E402
 import os
 os.environ['SDL_VIDEODRIVER'] = 'dummy'
 

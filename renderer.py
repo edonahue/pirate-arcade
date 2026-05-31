@@ -73,7 +73,7 @@ def _ensure_pause_static(title_font):
         inst = pg.font.Font(c.FONT_NAME, c.FONT_SIZE_INSTRUCTIONS)
         _pause_static['inst_font'] = inst
         _pause_static['controls'] = [
-            inst.render(l, True, c.GRAY) for l in [
+            inst.render(line, True, c.GRAY) for line in [
                 "W / S or Up / Down  —  Move paddle",
                 "ESC / P / Click     —  Pause / Resume",
                 "F                   —  FPS counter",
@@ -145,7 +145,6 @@ def draw_pause_overlay(surface, title_font, selection, sound_enabled, show_fps, 
     tx = c.WINDOW_WIDTH // 2 - _pause_static['title'].get_width() // 2
     surface.blit(_pause_static['title'], (tx, 60))
 
-    inst = _pause_static['inst_font']
     y = 150
     for line_surf in _pause_static['controls']:
         surface.blit(line_surf, (c.WINDOW_WIDTH // 2 - line_surf.get_width() // 2, y))

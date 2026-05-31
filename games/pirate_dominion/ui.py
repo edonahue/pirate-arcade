@@ -294,7 +294,6 @@ def _new_confetti_particle():
 
 def _update_confetti(dt):
     SH = c.WINDOW_HEIGHT
-    SW = c.WINDOW_WIDTH
     for p in _CONFETTI:
         p['life'] -= dt
         p['vy'] += 80 * dt

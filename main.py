@@ -3,13 +3,13 @@ import pygame as pg
 
 pg.font.init()
 
-import constants as c
-from launcher import Launcher
-from games.pong.game import PongGame
-from games.breakout.game import BreakoutGame
-from games.asteroids.game import AsteroidsGame
-from games.pirate_dominion.game import PirateDominion
-from audio import Audio
+import constants as c  # noqa: E402
+from launcher import Launcher  # noqa: E402
+from games.pong.game import PongGame  # noqa: E402
+from games.breakout.game import BreakoutGame  # noqa: E402
+from games.asteroids.game import AsteroidsGame  # noqa: E402
+from games.pirate_dominion.game import PirateDominion  # noqa: E402
+from audio import Audio  # noqa: E402
 
 def run_game(game_class, surface, audio):
     game = game_class(surface, audio)

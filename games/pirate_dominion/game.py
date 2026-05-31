@@ -1,4 +1,3 @@
-import os
 import pygame as pg
 import constants as c
 import highscores as hs
