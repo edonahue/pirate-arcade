@@ -272,16 +272,17 @@ def test_gameplay_fire_cannonball(game):
 
 
 def test_gameplay_fire_rate_limit(game):
-    game.ship.alive = True
+    game.cannonballs.clear()
     game.cooldown = 0
+    game.ship.alive = True
     game.ship.angle = 0
     game.ship.x = 50
     game.ship.y = 50
     keys = _keys()
     keys[pg.K_SPACE] = 1
     game.update(0.016, keys)
+    assert len(game.cannonballs) == 1
     n0 = len(game.cannonballs)
-    assert n0 == 1
     game.update(0.001, keys)
     assert len(game.cannonballs) == n0
 
