@@ -95,5 +95,9 @@ EOF
 chmod +x "${BUILD_DIR}/DEBIAN/postinst"
 
 mkdir -p "${DIST_DIR}"
-dpkg-deb --build "${BUILD_DIR}" "${DIST_DIR}/${PKG}_${VERSION}_all.deb"
+FAKEROOT=""
+if command -v fakeroot &> /dev/null; then
+    FAKEROOT="fakeroot"
+fi
+${FAKEROOT} dpkg-deb --build "${BUILD_DIR}" "${DIST_DIR}/${PKG}_${VERSION}_all.deb"
 echo "Built: ${DIST_DIR}/${PKG}_${VERSION}_all.deb"

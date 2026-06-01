@@ -3,7 +3,7 @@ import constants as c
 import highscores as hs
 from games.pong.menu import Menu
 from games.pong.gameplay import Gameplay
-from renderer import draw_pause_overlay, draw_game_over, WinParticles, _VIGNETTE
+from renderer import draw_pause_overlay, draw_game_over, WinParticles, _VIGNETTE, draw_scanlines
 from util import toggle_fullscreen
 
 class PongGame:
@@ -162,3 +162,4 @@ class PongGame:
                 self.gameplay.player_score, self.gameplay.ai_score,
                 player_won, self.game_over_timer, self.particles)
         self.surface.blit(_VIGNETTE, (0, 0))
+        draw_scanlines(self.surface)

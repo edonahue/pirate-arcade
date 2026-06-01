@@ -2,7 +2,7 @@ import pygame as pg
 import constants as c
 import highscores as hs
 from games.breakout.gameplay import Gameplay
-from renderer import _OVERLAY, _VIGNETTE
+from renderer import _OVERLAY, _VIGNETTE, draw_scanlines
 from util import toggle_fullscreen
 
 class BreakoutGame:
@@ -171,6 +171,7 @@ class BreakoutGame:
             self.gameplay.draw(self.surface, fps=fps)
             self._draw_game_over()
         self.surface.blit(_VIGNETTE, (0, 0))
+        draw_scanlines(self.surface)
 
     def _draw_menu(self):
         self.surface.fill(c.PIRATE_NAVY)

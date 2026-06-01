@@ -106,8 +106,8 @@ class Gameplay:
                 offset = max(-1, min(1, offset))
                 angle = offset * 60
                 speed = self.ball.speed
-                self.ball.vx = math.cos(math.radians(angle)) * speed
-                self.ball.vy = -abs(math.sin(math.radians(angle)) * speed)
+                self.ball.vx = math.sin(math.radians(angle)) * speed
+                self.ball.vy = -abs(math.cos(math.radians(angle)) * speed)
                 self.ball.y = self.paddle.y - self.paddle.height // 2 - self.ball.radius
                 self.ball.bump_speed()
                 self.audio.play('paddle_hit')

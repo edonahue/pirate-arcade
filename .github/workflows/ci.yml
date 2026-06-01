@@ -105,11 +105,23 @@ jobs:
       - name: Build with PyInstaller
         run: pyinstaller pirate-arcade.spec
 
+      - name: Set upload path
+        id: paths
+        shell: bash
+        run: |
+          if [ -d "dist/pirate-arcade.app" ]; then
+            echo "upload-path=dist/pirate-arcade.app" >> "$GITHUB_OUTPUT"
+          elif [ -d "dist/pirate-arcade" ]; then
+            echo "upload-path=dist/pirate-arcade" >> "$GITHUB_OUTPUT"
+          else
+            echo "upload-path=dist" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ runner.os }}-binary
-          path: dist/pirate-arcade/
+          path: ${{ steps.paths.outputs.upload-path }}
 
   release:
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')

@@ -48,13 +48,15 @@ TITLE_FONT = None
 CARD_FONT = None
 DESC_FONT = None
 HINT_FONT = None
+PRESS_FONT = None
 
 def _init_fonts():
-    global TITLE_FONT, CARD_FONT, DESC_FONT, HINT_FONT
+    global TITLE_FONT, CARD_FONT, DESC_FONT, HINT_FONT, PRESS_FONT
     TITLE_FONT = pg.font.Font(c.FONT_NAME, 80)
     CARD_FONT = pg.font.Font(c.FONT_NAME, c.FONT_SIZE_TITLE)
     DESC_FONT = pg.font.Font(c.FONT_NAME, c.FONT_SIZE_INSTRUCTIONS)
     HINT_FONT = pg.font.Font(c.FONT_NAME, 20)
+    PRESS_FONT = pg.font.Font(c.FONT_NAME, 36)
 
 _CARD_GLOWS = {}
 
@@ -106,7 +108,7 @@ class Launcher:
         self._highscores_title = TITLE_FONT.render("HIGH SCORES", True, c.WHITE)
 
         self._cache_title_glow()
-        self._press_start = CARD_FONT.render("▶  PRESS START  ◀", True, c.WHITE)
+        self._press_start = PRESS_FONT.render("▶  PRESS START  ◀", True, c.WHITE)
         self._coin_label = HINT_FONT.render("INSERT COIN", True, c.NEON_CYAN)
         self._credit_label = HINT_FONT.render("CREDIT  1", True, (100, 255, 100))
 
@@ -335,5 +337,5 @@ class Launcher:
             pg.draw.rect(self.surface, dim_accent, accent_rect,
                          border_top_left_radius=8, border_bottom_left_radius=8)
 
-        self.surface.blit(self._card_title_surfs[gi]['sel' if selected else 'unsel'], (x + 25, y + 10))
-        self.surface.blit(self._card_desc_surfs[gi], (x + 30, y + 55))
+        self.surface.blit(self._card_title_surfs[gi]['sel' if selected else 'unsel'], (x + 25, y + 8))
+        self.surface.blit(self._card_desc_surfs[gi], (x + 30, y + 58))

@@ -91,29 +91,33 @@ class Menu:
 
         items = self._get_items()
 
-        # Scroll panel
+        # Scroll panel (cached — only rebuild on size change)
         panel_w = 440
         item_count = len(items)
         panel_h = item_count * 52 + 30
         panel_x = c.WINDOW_WIDTH // 2 - panel_w // 2
         panel_y = 330
 
-        panel = pg.Surface((panel_w, panel_h), pg.SRCALPHA)
-        r = 14
-        gfxdraw.filled_circle(panel, r, r, r, (25, 22, 30, 200))
-        gfxdraw.filled_circle(panel, panel_w - r - 1, r, r, (25, 22, 30, 200))
-        gfxdraw.filled_circle(panel, r, panel_h - r - 1, r, (25, 22, 30, 200))
-        gfxdraw.filled_circle(panel, panel_w - r - 1, panel_h - r - 1, r, (25, 22, 30, 200))
-        pg.draw.rect(panel, (25, 22, 30, 200), (r, 0, panel_w - 2 * r, panel_h))
-        pg.draw.rect(panel, (25, 22, 30, 200), (0, r, panel_w, panel_h - 2 * r))
-        gfxdraw.aacircle(panel, r, r, r, (60, 50, 40, 200))
-        gfxdraw.aacircle(panel, panel_w - r - 1, r, r, (60, 50, 40, 200))
-        gfxdraw.aacircle(panel, r, panel_h - r - 1, r, (60, 50, 40, 200))
-        gfxdraw.aacircle(panel, panel_w - r - 1, panel_h - r - 1, r, (60, 50, 40, 200))
-        pg.draw.line(panel, (60, 50, 40, 200), (r, 0), (panel_w - r - 1, 0))
-        pg.draw.line(panel, (60, 50, 40, 200), (r, panel_h - 1), (panel_w - r - 1, panel_h - 1))
-        pg.draw.line(panel, (60, 50, 40, 200), (0, r), (0, panel_h - r - 1))
-        pg.draw.line(panel, (60, 50, 40, 200), (panel_w - 1, r), (panel_w - 1, panel_h - r - 1))
+        cache_key = (panel_w, panel_h)
+        panel = _MENU_CACHE.get('panel_cache_' + str(cache_key))
+        if panel is None:
+            panel = pg.Surface((panel_w, panel_h), pg.SRCALPHA)
+            r = 14
+            gfxdraw.filled_circle(panel, r, r, r, (25, 22, 30, 200))
+            gfxdraw.filled_circle(panel, panel_w - r - 1, r, r, (25, 22, 30, 200))
+            gfxdraw.filled_circle(panel, r, panel_h - r - 1, r, (25, 22, 30, 200))
+            gfxdraw.filled_circle(panel, panel_w - r - 1, panel_h - r - 1, r, (25, 22, 30, 200))
+            pg.draw.rect(panel, (25, 22, 30, 200), (r, 0, panel_w - 2 * r, panel_h))
+            pg.draw.rect(panel, (25, 22, 30, 200), (0, r, panel_w, panel_h - 2 * r))
+            gfxdraw.aacircle(panel, r, r, r, (60, 50, 40, 200))
+            gfxdraw.aacircle(panel, panel_w - r - 1, r, r, (60, 50, 40, 200))
+            gfxdraw.aacircle(panel, r, panel_h - r - 1, r, (60, 50, 40, 200))
+            gfxdraw.aacircle(panel, panel_w - r - 1, panel_h - r - 1, r, (60, 50, 40, 200))
+            pg.draw.line(panel, (60, 50, 40, 200), (r, 0), (panel_w - r - 1, 0))
+            pg.draw.line(panel, (60, 50, 40, 200), (r, panel_h - 1), (panel_w - r - 1, panel_h - 1))
+            pg.draw.line(panel, (60, 50, 40, 200), (0, r), (0, panel_h - r - 1))
+            pg.draw.line(panel, (60, 50, 40, 200), (panel_w - 1, r), (panel_w - 1, panel_h - r - 1))
+            _MENU_CACHE['panel_cache_' + str(cache_key)] = panel
         surface.blit(panel, (panel_x, panel_y))
 
         pg.draw.rect(surface, c.PANEL_ACCENT, (panel_x + 10, panel_y + 8, panel_w - 20, 3))

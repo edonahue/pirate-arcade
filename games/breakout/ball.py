@@ -37,8 +37,8 @@ class Ball:
         if not self.launched:
             self.launched = True
             angle = random.uniform(-60, 60)
-            self.vx = math.cos(math.radians(angle)) * self.speed
-            self.vy = -abs(math.sin(math.radians(angle)) * self.speed)
+            self.vx = math.sin(math.radians(angle)) * self.speed
+            self.vy = -abs(math.cos(math.radians(angle)) * self.speed)
 
     def stick_to_paddle(self, paddle):
         self.x = paddle.x

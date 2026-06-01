@@ -2,7 +2,7 @@ import pygame as pg
 import constants as c
 import highscores as hs
 from games.asteroids.gameplay import Gameplay
-from renderer import _OVERLAY, _VIGNETTE
+from renderer import _OVERLAY, _VIGNETTE, draw_scanlines
 from util import toggle_fullscreen
 import random
 import traceback
@@ -199,6 +199,7 @@ class AsteroidsGame:
                 self._draw_game_over()
 
             self.surface.blit(_VIGNETTE, (0, 0))
+            draw_scanlines(self.surface)
         except Exception:
             traceback.print_exc()
             print("*** BUG: Uncaught exception in Asteroids _draw — recovering ***")

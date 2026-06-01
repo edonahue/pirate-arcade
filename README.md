@@ -12,7 +12,7 @@ A pirate-themed collection of four classic arcade games built with Python and Py
 | **Cannonball Clash** | Pong | A pirate ship cannonball duel. First ship to 11 hits wins! |
 | **Treasure Cove** | Breakout | Smash through fort defenses to secure the loot. |
 | **Kraken's Wake** | Asteroids | Sail the Kraken's Wake and sink enemy ships to advance waves. |
-| **Port Royale Tycoon** | Monopoly | Build a shipping empire. Buy properties, collect port fees, and outmaneuver rival captains. |
+| **Port Royale Tycoon** | Property-trading board game | Build a shipping empire. Buy properties, collect port fees, and outmaneuver rival captains. |
 
 ## Features
 

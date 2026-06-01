@@ -1,3 +1,15 @@
+pirate-arcade (2.0.0-2) unstable; urgency=medium
+
+  * Fix launcher PRESS START text overlap — reduced font from 72px to 36px
+    to prevent overlapping adjacent game cards.
+  * Fix launcher card title/description spacing for better readability.
+  * Fix Port Royale Tycoon menu panel rebuilt every frame — panel now cached
+    and only recreated when item count changes.
+  * Fix build_deb.sh to use fakeroot for proper root file ownership in .deb.
+  * Fix CI macOS build-exe upload path to handle .app bundle output.
+
+ -- Erich Donahue <edonahue@users.noreply.github.com>  Sun, 31 May 2026 11:00:00 -0700
+
 pirate-arcade (2.0.0-1) unstable; urgency=medium
 
   * Initial release for public distribution.

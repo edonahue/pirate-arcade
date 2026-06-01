@@ -5,7 +5,7 @@ from games.pirate_dominion.menu import Menu
 from games.pirate_dominion.player import Player
 from games.pirate_dominion.gameplay import Gameplay
 from games.pirate_dominion import save_load
-from renderer import _VIGNETTE, _ensure_gradient
+from renderer import _VIGNETTE, _ensure_gradient, draw_scanlines
 from util import toggle_fullscreen
 
 class PirateDominion:
@@ -215,6 +215,7 @@ class PirateDominion:
         elif self.state == 'game_over':
             self._draw_game_over()
             self.surface.blit(_VIGNETTE, (0, 0))
+        draw_scanlines(self.surface)
 
     def _draw_playing(self):
         from games.pirate_dominion.board import draw_board

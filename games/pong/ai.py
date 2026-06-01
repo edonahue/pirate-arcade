@@ -19,7 +19,7 @@ class AI:
             self.offset_timer = random.uniform(0.5, 1.5)
         target_y = ball.y + self.offset
         diff = target_y - paddle.y
-        max_speed = c.BALL_SPEED_INITIAL * self.speed_factor
+        max_speed = ball.speed * self.speed_factor
         if abs(diff) > 10:
             paddle.vy = max(-max_speed, min(max_speed, diff / 0.3))
         else:

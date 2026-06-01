@@ -371,11 +371,14 @@ class Gameplay:
         amount = self._parse_card_amount(text)
         if text.startswith("Advance to START"):
             player.position = 0
+            self._resolve_space()
+            self.current_card = None
+            return
         elif text.startswith("Advance 5 spaces"):
             old_pos = player.position
             player.position = (player.position + 5) % c.PD_BOARD_SIZE
             if player.position < old_pos:
-                player.money += c.PD_PASS_GO
+                player.money += 100  # Card says 100, not 200
             self._resolve_space()
             if self.phase != PHASE_CARD:
                 self.current_card = None

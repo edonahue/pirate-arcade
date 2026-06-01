@@ -127,15 +127,17 @@ class Gameplay:
                 return ('game_over', win)
             self.reset_round()
 
-        self.powerup_spawn_timer -= dt
-        if self.powerup_spawn_timer <= 0 and self.powerup is None:
-            self.powerup = PowerUp()
-            self.powerup_spawn_timer = c.POWERUP_SPAWN_INTERVAL
+        if self.powerup is None:
+            self.powerup_spawn_timer -= dt
+            if self.powerup_spawn_timer <= 0:
+                self.powerup = PowerUp()
+                self.powerup_spawn_timer = c.POWERUP_SPAWN_INTERVAL
 
         if self.powerup:
             self.powerup.update(dt)
             if self.powerup.expired:
                 self.powerup = None
+                self.powerup_spawn_timer = c.POWERUP_SPAWN_INTERVAL
             elif self.powerup.rect.colliderect(self.player_paddle.rect):
                 self.player_paddle.activate_big()
                 self.audio.play('powerup')

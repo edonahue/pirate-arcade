@@ -65,6 +65,10 @@ def _ensure_scanlines():
 
 _ALPHA_LEVELS = 8
 
+def draw_scanlines(surface):
+    _ensure_scanlines()
+    surface.blit(_SCANLINES, (0, 0))
+
 _pause_static = {}
 
 def _ensure_pause_static(title_font):
